@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="content row">
+    <div class="card glass row">
+        <div class="card-body">
+        <h5 class="card-title">Users List</h5>
+        <h6 class="card-subtitle mb-2 text-muted">List of users</h6>
+
+        <form class="row g-3" action="{{ url_for('user_list') }}" method="POST">
+            <div class="col-md-6">
+                <label for="code" class="form-label">Code</label>
+                <input type="text" class="form-control" name="code" placeholder="Input Code">
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Apply Filter</button>
+            </form>
+            <table class="table  table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>id</th>
+                        <th>code</th>
+                        <th>First_Name</th>
+                        <th>Last_Name</th>
+                        <th>Password</th>
+                        <th>Active</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user["id"] }}</td>
+                            <td>{{ user["code"] }}</td>
+                            <td>{{ user["first_name"] }}</td>
+                            <td>{{ user["last_name"] }}</td>
+                            <td>{{ user["password"] }}</td>
+                            <td>{{ user["active"] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

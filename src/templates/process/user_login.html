@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content">
+
+  <div class="card mt-5 w-75 glass ">
+      <div class="card-body">
+        <h1 class="card-title fw_bold ">Login</h1>
+        
+        <div class="row">
+          <!-- IMAGEN -->
+          <div class="col user-image d-none d-lg-block rounded">
+            
+          </div>
+          <!-- LOGIN -->
+          <div class="col p-5">
+            <form class="align-items-center g-2" action="{{ url_for('user_login') }}" method="POST">
+              <div class="col-md-12 mb-4">
+                  <label for="code" class="form-label">Code</label>
+                  <input type="text" class="form-control" name="code" placeholder="Input Code">
+              </div>
+              <div class="col-md-12 mb-4">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+              <div class="col-12 mb-4 d-grid">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                  
+              </div>
+            </form>
+
+          </div>
+        </div>  
+      </div>
+  </div>
+  
+</div>
+
+{% endblock %}

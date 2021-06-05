@@ -1,0 +1,36 @@
+body {
+	width: 100%;
+	padding: 5px;
+	margin: auto;
+	background: url(../img/mosaic.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;	
+
+	/* background: radial-gradient(circle at 29.77% 21.1%, #93ce71 0, #7bc971 16.67%, #59bf6d 33.33%, #1cb066 50%, #00a161 66.67%, #009662 83.33%, #008f69 100%); */
+}
+.content {
+	margin: auto;
+	display: flex;
+}
+.user-image {
+	background-image: url(../img/user.png);
+	background-position: center center;
+	background-size: cover;
+
+}
+
+.card {
+	padding: 5px;	
+	margin: auto;
+	vertical-align: center;
+}
+
+/* Efecto Glass */
+.glass {
+	transition: 0.5s all ease;
+	background-color: rgba(255, 255, 255, 0.4);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	backdrop-filter: blur(10px);
+}

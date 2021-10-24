@@ -1,20 +1,27 @@
 {% extends 'base.html' %} 
+
+{% block head %}
+    <!-- DATATABLES -->
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"/>
+{% endblock %}
+
 {% block content %}
 <div class="content row">
     <div class="card glass row">
         <div class="card-body">
-        <h5 class="card-title">Users List</h5>
-        <h6 class="card-subtitle mb-2 text-muted">List of users</h6>
+            <h5 class="card-title">Users List</h5>
+            <h6 class="card-subtitle mb-2 text-muted">List of users</h6>
 
-        <form class="row g-3" action="{{ url_for('user_list') }}" method="POST">
-            <div class="col-md-6">
-                <label for="code" class="form-label">Code</label>
-                <input type="text" class="form-control" name="code" placeholder="Input Code">
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">Apply Filter</button>
-            </form>
-            <table class="table  table-striped">
+            <form class="row g-3" action="{{ url_for('user_list') }}" method="POST">
+                <div class="col-md-6">
+                    <label for="code" class="form-label">Code</label>
+                    <input type="text" class="form-control" name="code" placeholder="Input Code">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Apply Filter</button>
+                </div>
+            </form>           
+            <table class="table  table-striped"  id="tableID" >
                 <thead class="table-dark">
                     <tr>
                         <th>id</th>
@@ -39,9 +46,22 @@
                     {% endfor %}
                 </tbody>
             </table>
-
         </div>
-
     </div>
 </div>
 {% endblock %}
+
+{% block script %}
+    <!-- Datatables -->
+		<script src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/datatables.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#tableID').DataTable();
+				} 
+			);
+		</script>
+{% endblock %}
+
+
+

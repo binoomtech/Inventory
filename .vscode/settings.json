@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "c:\\Users\\admin\\.virtualenvs\\InvApp1.2-FtxpC6kX\\Scripts\\python.exe"
+    "python.pythonPath": "c:\\Users\\admin\\.virtualenvs\\InvApp1.2-FtxpC6kX\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": false
 }

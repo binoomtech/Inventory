@@ -3,10 +3,6 @@ from src import app
 import sqlite3
 from src.models import user_logic
 
-
-
-
-
 # USERS ROUTES
 @app.route('/user_new', methods=['POST', 'GET'])
 def user_new():
@@ -98,10 +94,12 @@ def user_login():
     else:
         return render_template('process/user_login.html')
 
+
 @app.route('/user_logout')
 def user_logout():
     if 'usercode' in session:
         session['usercode']=''
     
     return render_template('process/user_login.html')
+
 

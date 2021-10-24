@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
         <link rel="stylesheet" href="../static/css/style.css" media="screen"/>
 
+		{% block head %}{% endblock %}
 		<title>Inventory App</title>
 	</head>
 	<body>
@@ -51,5 +52,10 @@
 		
 		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script> -->
 		<script src="../static/js/bootstrap.bundle.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+
+		{% block script %}{% endblock %}
+		
 	</body>
 </html>
